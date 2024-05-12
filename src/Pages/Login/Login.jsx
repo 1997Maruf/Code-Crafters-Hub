@@ -1,12 +1,26 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
-    const handelLOgin = e =>{
-        e.preventDefault()
-        console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget)
-        console.log(form)
+    const {signIn} = useContext(AuthContext);
+    const handelLOgin = event =>{
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+      
+       
+        console.log(email, password);
+
+        signIn(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error));
     }
     return (
         <div className="login bg-cover">
