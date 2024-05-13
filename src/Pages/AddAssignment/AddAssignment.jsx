@@ -9,10 +9,11 @@ const AddAssignment = () => {
         const title = form.title.value;
         const marks = form.marks.value;
         const difficulty = form.difficulty.value;
-        const photo = form.photo.value;
+        const date = form.date.value;
+        const thumbnailImageUrl = form.thumbnailImageUrl.value;
         const description = form.description.value;
 
-        const newAssignment = {title, marks, difficulty, photo, description}
+        const newAssignment = {title, marks, difficulty, date, thumbnailImageUrl, description}
 //   console.log(newAssignment);
         //send data to the server
         fetch('http://localhost:5000/assignment',{
@@ -65,7 +66,7 @@ const AddAssignment = () => {
                         <span className="label-text">thumbnail Image URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="photo" placeholder="thumbnail Image URL" className="input input-bordered -ml-4 w-full" />
+                        <input type="text" name="thumbnailImageUrl" placeholder="thumbnail Image URL" className="input input-bordered -ml-4 w-full" />
                     </label>
                 </div>
                 <div className="form-control w-1/2">
@@ -78,7 +79,14 @@ const AddAssignment = () => {
                 
             </div>
             
-            
+            <div className="form-control md:w-1/2 lg:ml-4">
+                    <label className="label">
+                        <span className="label-text">Date</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="date" name="date" placeholder="Date" className="input input-bordered -ml-4 w-full" />
+                    </label>
+                </div>
             {/* form difficulty level */}
                 
             <div className="mb-8">

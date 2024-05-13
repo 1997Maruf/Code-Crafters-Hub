@@ -13,8 +13,8 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
 import AddAssignment from './Pages/AddAssignment/AddAssignment';
 import Assignments from './Pages/Assignments/Assignments';
-import AssignmentCard from './Pages/Assignments/AssignmentCard';
 import UpdateAssignments from './Component/UpdateAssignments/UpdateAssignments';
+import ViewAssignment from './Pages/ViewAssignment/ViewAssignment';
 
 const router = createBrowserRouter([
   {
@@ -41,15 +41,17 @@ const router = createBrowserRouter([
         path: "/assignment",
         element: <Assignments></Assignments>,
         loader: ()=> fetch('http://localhost:5000/assignment')
-      },{
-        path: "/AssignmentDetals/:id",
-        element : <AssignmentCard></AssignmentCard>,
-        loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
       },
+      
       {
         path: "/updateAssignment/:id",
         element : <UpdateAssignments></UpdateAssignments>,
         loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+      },
+      {
+       path: "/view/:id",
+       element : <ViewAssignment></ViewAssignment>,
+       loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
       }
     ]
   },

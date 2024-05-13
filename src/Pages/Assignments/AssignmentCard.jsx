@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AssignmentCard = ({ assignment }) => {
+const AssignmentCard = ({assignment}) => {
   const { title, description, marks, thumbnailImageUrl, difficulty, _id } = assignment;
 
+const [assignments, setAssignments] = useState(assignment);
 
 const handleDelete = _id => {
 console.log(_id);
@@ -29,8 +31,11 @@ Swal.fire({
              "Deleted!",
              "Your Assignment has been deleted.",
             "success"
-          )
+          )  
+          const remaining = assignments.filter(ass => ass._id !==_id);
+          setAssignments(remaining);
       }
+     
     })
   }
 });
@@ -46,11 +51,11 @@ Swal.fire({
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>{description}</p>
         <div className="card-actions justify-end">
           <button onClick={() => handleDelete(_id)} className="btn border-t-indigo-600">Delete</button>
           <Link to={`/updateAssignment/${_id}`} className="btn border-t-indigo-600">Update</Link>
-          <Link to={`/AssignmentDetals/${_id}`} className="btn border-t-indigo-600">View Details</Link>
+          <Link to={`/view/${_id}`} className="btn border-t-indigo-600">View Details</Link>
         </div>
       </div>
     </div>
