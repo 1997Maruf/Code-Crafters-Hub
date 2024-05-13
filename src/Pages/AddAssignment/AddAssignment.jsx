@@ -38,8 +38,8 @@ const AddAssignment = () => {
       
     }
     return (
-        <div className="bg-[#F4F3F0] p-24">
-        <h2 className="text-3xl font-extrabold">Add a Textile Arts CArd</h2>
+        <div className=" p-24">
+        <h2 className="text-3xl font-extrabold">Add a Assignment</h2>
         <form onSubmit={handleAddCoffee}>
             {/* form supplier row */}
             <div className="md:flex mb-8">
@@ -69,8 +69,8 @@ const AddAssignment = () => {
                         <input type="text" name="thumbnailImageUrl" placeholder="thumbnail Image URL" className="input input-bordered -ml-4 w-full" />
                     </label>
                 </div>
-                <div className="form-control w-1/2">
-                  <select className="py-3 mt-8 pl-2" id="difficulty" name="difficulty">
+                <div className="form-control w-1/2 border-2xl">
+                  <select className="py-3 mt-8 pl-2" id="difficulty" name="difficulty ">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>

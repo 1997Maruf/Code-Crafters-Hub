@@ -1,13 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ViewAssignment = () => {
   const assignment = useLoaderData();
   console.log(assignment);
-  const { title, description, marks, date, thumbnailImageUrl, difficulty } =
+  const { title, description, marks, date, thumbnailImageUrl, difficulty, _id } =
     assignment;
   return (
-    <div className=" mt-20 radu">
-      <div className=" shadow-lg w-10/12 mx-auto shadow-black p-10">
+    <div className=" my-20 ">
+      <div className=" shadow-lg w-10/12 mx-auto shadow-black p-10 rounded-lg">
       <img src={thumbnailImageUrl} alt="" />
       <div>
         <h2 className="text-4xl font-bold my-10">{title}</h2>
@@ -22,6 +22,7 @@ const ViewAssignment = () => {
           <span className="font-bold">date :</span> {date}
         </p>
       </div>
+      <Link to={`/sub/${_id}`} className="btn border-t-indigo-800">Take assignment</Link>
       </div>
     </div>
   );

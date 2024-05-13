@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AssignmentCard = ({assignment}) => {
+const AssignmentCard = ({assignment, assignments, setAssignments}) => {
   const { title, description, marks, thumbnailImageUrl, difficulty, _id } = assignment;
 
-const [assignments, setAssignments] = useState(assignment);
 
 const handleDelete = _id => {
 console.log(_id);
@@ -42,7 +41,7 @@ Swal.fire({
 }
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl shadow-black ">
       <figure>
         <img
           src={thumbnailImageUrl}
