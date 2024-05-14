@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pending",
-        element: <PendingAssignments></PendingAssignments>,
+        element: <PrivateRoute><PendingAssignments></PendingAssignments></PrivateRoute>,
         loader: ()=> fetch('http://localhost:5000/submitAssignment')
        
       },

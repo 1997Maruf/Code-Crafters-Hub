@@ -1,11 +1,15 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import UseAuth from "../../Hooks/UseAuth";
+import axios from "axios";
 
 
 const Login = () => {
     const {signIn} = UseAuth({});
+    const location = useLocation();
+    const naviget = useNavigate();
+
     const handelLOgin = event =>{
         event.preventDefault()
         const form = event.target;
@@ -15,8 +19,15 @@ const Login = () => {
 
         signIn(email, password)
         .then(result =>{
-            const user = result.user;
-            console.log(user);
+            const loggedInuser = result.user;
+            console.log(loggedInuser);
+            const user = {email};
+            // naviget(location?.state ? location?.state : '/')
+            //get access token
+            axios.post('http://localhost:5000/jwt', user)
+            .then(res =>{
+              console.log(res.data);
+            })
         })
         .catch(error => console.log(error));
     }
@@ -27,7 +38,7 @@ const Login = () => {
          <div className="hero-content flex-col ">
           
           
-           <div className="ml-[580px] px-16 shrink-0 w-full bg-g	  shadow-2xl rounded-2xl ">
+           <div className="ml-[580px] px-16 shrink-0 w-full bg-g	   shadow-2xl shadow-slate-700 rounded-2xl ">
              <form onSubmit={handelLOgin} className="card-body">
               
    
