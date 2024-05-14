@@ -3,8 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 const ViewAssignment = () => {
   const assignment = useLoaderData();
   console.log(assignment);
-  const { title, description, marks, date, thumbnailImageUrl, difficulty, _id } =
-    assignment;
+  const { title, description, marks, thumbnailImageUrl, difficulty, _id } = assignment;
+    console.log(title, description, marks,  thumbnailImageUrl, difficulty, _id )
   return (
     <div className=" my-20 ">
       <div className=" shadow-lg w-10/12 mx-auto shadow-black p-10 rounded-lg">
@@ -19,7 +19,7 @@ const ViewAssignment = () => {
           <span className="font-bold">Difficulty : </span> {difficulty}
         </p>
         <p className="text-xl mb-3">
-          <span className="font-bold">date :</span> {date}
+          {/* <span className="font-bold">date :</span> {date} */}
         </p>
       </div>
       <Link to={`/sub/${_id}`} className="btn border-t-indigo-800">Take assignment</Link>

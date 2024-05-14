@@ -62,8 +62,9 @@ const router = createBrowserRouter([
         loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
       },
       {
-        path: "/pending/:id",
+        path: "/pending",
         element: <PendingAssignments></PendingAssignments>,
+        loader: ()=> fetch('http://localhost:5000/submitAssignment')
        
       }
 

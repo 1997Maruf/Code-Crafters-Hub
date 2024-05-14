@@ -41,7 +41,7 @@ Swal.fire({
 }
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl shadow-black ">
+    <div className="card w-96 bg-base-100 shadow-xl shadow-black mt-20 ">
       <figure>
         <img
           src={thumbnailImageUrl}
