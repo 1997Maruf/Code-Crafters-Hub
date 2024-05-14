@@ -18,6 +18,7 @@ import ViewAssignment from './Pages/ViewAssignment/ViewAssignment';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AssignmentSubmission from './Pages/AssignmentSubmission/AssignmentSubmission';
 import PendingAssignments from './Pages/PendingAssignments/PendingAssignments';
+import GiveMarks from './Pages/GiveMarks/GiveMarks';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,12 @@ const router = createBrowserRouter([
         element: <PendingAssignments></PendingAssignments>,
         loader: ()=> fetch('http://localhost:5000/submitAssignment')
        
+      },
+      {
+        path: "/givemarks/:id",
+        element: <GiveMarks></GiveMarks>,
+        loader: ({params})=> fetch(`http://localhost:5000/submitAssignment/${params.id}`)
+
       }
 
     ]

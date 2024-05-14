@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const PendingCard = ({ assignment }) => {
-  const { marks, assignmentTitle, studentName } = assignment;
+  const { marks, assignmentTitle, studentName, _id } = assignment;
   return (
     <div>
         
@@ -10,7 +12,7 @@ const PendingCard = ({ assignment }) => {
         <h2 className="card-title font-bold text-white">{studentName}</h2>
         <p className="text-xl font-extrabold text-white"> marks : {marks}</p>
         <div className="card-actions">
-          <button className="btn border-2 hover:shadow-2xl mt-4	hover:shadow-slate-200 text-xl font-bold">Give mark</button>
+          <Link to={`/params/${_id}`} className="btn border-2 hover:shadow-2xl mt-4	hover:shadow-slate-200 text-xl font-bold">Give mark</Link>
         </div>
       </div>
     </div>
