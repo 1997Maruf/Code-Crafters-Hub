@@ -33,11 +33,13 @@ const GiveMarks = () => {
     }
     return (
         <div className="h-screen">
-          <h2 className="text-4xl font-bold">{link}</h2>
-          <h2 className="text-4xl font-bold ml-32">{note}</h2>
+         <div className="border-2 w-1/3  border-gray-500 ml-48 mt-28">
+         <h2 className="text-xl font-bold ">pdf/docs link : {link}</h2>
+          <h2 className="text-xl font-bold ">Notes : {note}</h2>
+         </div>
            
             <div>
-           <form onSubmit={ handelSubmission} className="mx-[10%] mt-28">
+           <form onSubmit={ handelSubmission} className="mx-[10%] mt-16">
                  
               <div className="form-control">
                 <label className="label">
