@@ -19,7 +19,7 @@ const GiveMarks = () => {
         }
       console.log(order);
       
-      fetch('http://localhost:5000/feetback', {
+      fetch('https://code-crafter-hub-serveer.vercel.app/feetback', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

@@ -45,34 +45,34 @@ const router = createBrowserRouter([
       {
         path: "/assignment",
         element: <Assignments></Assignments>,
-        loader: ()=> fetch('http://localhost:5000/assignment')
+        loader: ()=> fetch('https://code-crafter-hub-serveer.vercel.app/assignment')
       },
       
       {
         path: "/updateAssignment/:id",
         element : <PrivateRoute><UpdateAssignments></UpdateAssignments></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+        loader: ({params})=> fetch(`https://code-crafter-hub-serveer.vercel.app/assignment/${params.id}`)
       },
       {
        path: "/view/:id",
        element : <PrivateRoute><ViewAssignment></ViewAssignment></PrivateRoute>,
-       loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+       loader: ({params})=> fetch(`https://code-crafter-hub-serveer.vercel.app/assignment/${params.id}`)
       },
       {
         path: "/sub/:id",
         element : <AssignmentSubmission></AssignmentSubmission>,
-        loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+        loader: ({params})=> fetch(`https://code-crafter-hub-serveer.vercel.app/assignment/${params.id}`)
       },
       {
         path: "/pending",
         element: <PrivateRoute><PendingAssignments></PendingAssignments></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/submitAssignment')
+        loader: ()=> fetch('https://code-crafter-hub-serveer.vercel.app/submitAssignment')
        
       },
       {
         path: "/givemarks/:id",
         element: <GiveMarks></GiveMarks>,
-        loader: ({params})=> fetch(`http://localhost:5000/submitAssignment/${params.id}`)
+        loader: ({params})=> fetch(`https://code-crafter-hub-serveer.vercel.app/submitAssignment/${params.id}`)
 
       },
       {

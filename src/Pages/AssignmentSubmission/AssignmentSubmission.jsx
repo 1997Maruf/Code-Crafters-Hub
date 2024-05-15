@@ -24,7 +24,7 @@ const AssignmentSubmission = () => {
         }
       console.log(order);
       
-      fetch('http://localhost:5000/submitAssignment', {
+      fetch('https://code-crafter-hub-serveer.vercel.app/submitAssignment', {
         widthCredentials: true,
         method: 'POST',
         headers: {

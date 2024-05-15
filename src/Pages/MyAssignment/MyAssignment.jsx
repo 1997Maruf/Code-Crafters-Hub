@@ -5,7 +5,7 @@ import TabilRow from "./TabilRow";
 const MyAssignment = () => {
   const { user } = useContext(AuthContext);
   const [submits, setSubmits] = useState([]);
-  const url = `http://localhost:5000/submitAssignment?email=${user.email}`;
+  const url = `https://code-crafter-hub-serveer.vercel.app/submitAssignment?email=${user.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

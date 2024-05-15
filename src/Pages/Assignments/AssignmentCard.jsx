@@ -19,7 +19,7 @@ Swal.fire({
 }).then((result) => {
   if (result.isConfirmed) {
     
-    fetch(`http://localhost:5000/assignment/${_id}`,{
+    fetch(`https://code-crafter-hub-serveer.vercel.app/assignment/${_id}`,{
       method: 'DELETE'
     })
     .then(res => res.json())

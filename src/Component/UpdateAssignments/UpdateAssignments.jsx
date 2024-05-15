@@ -17,7 +17,7 @@ const UpdateAssignments = () => {
         const updateAssignment = {title, marks, difficulty, thumbnailImageUrl, description}
 //   console.log(newAssignment);
         //send data to the server
-        fetch(`http://localhost:5000/assignment/${_id}`,{
+        fetch(`https://code-crafter-hub-serveer.vercel.app/assignment/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
