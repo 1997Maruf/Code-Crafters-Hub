@@ -7,7 +7,7 @@ const TabilRow = ({submit}) => {
         <div className="ml-20">
             <tr>
         
-        <td>{assignmentTitle}</td>
+        <td className="border-2">{assignmentTitle}</td>
         <td>{marks}</td>
         
       </tr>
