@@ -9,7 +9,7 @@ const MyAssignment = () => {
     useEffect(() =>{
         fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setSubmit(data))
     },[])
     return (
         <div>
