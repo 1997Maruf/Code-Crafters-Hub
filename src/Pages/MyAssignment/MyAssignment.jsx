@@ -21,7 +21,7 @@ const MyAssignment = () => {
           </tr>
         </thead>
         <tbody>
-          {submits.map((submit) => (
+        {submits.map((submit) => (
             <TabilRow key={submit._id} submit={submit}></TabilRow>
           ))}
         </tbody>
