@@ -22,13 +22,16 @@ const Login = () => {
             const loggedInuser = result.user;
             console.log(loggedInuser);
             const user = {email};
-            // naviget(location?.state ? location?.state : '/')
+            
             //get access token
             axios.post('http://localhost:5000/jwt', user, {
               withCredentials: true
             })
             .then(res =>{
               console.log(res.data);
+              if(res.data.success){
+                naviget(location?.state ? location?.state : '/')
+              }
             })
         })
         .catch(error => console.log(error));

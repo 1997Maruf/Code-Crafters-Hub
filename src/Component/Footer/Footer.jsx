@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer items-center p-4 bg-neutral text-neutral-content px-20">
       <aside className="items-center grid-flow-col">
-        <Link to="/" className="font-bold text-2xl">Code Crafter Hub</Link>
+        <Link to="/" className="font-bold text-2xl sm:text-xl">Code Crafter Hub</Link>
         <p className="ml-11">Copyright © 2024 - All right reserved</p>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

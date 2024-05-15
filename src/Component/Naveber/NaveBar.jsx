@@ -61,7 +61,7 @@ const NaveBar = () => {
             {link}
           </ul>
         </div>
-        <Link to="/" className=" text-3xl font-extrabold">
+        <Link to="/" className=" text-3xl sm:text-xl font-extrabold">
           Code Crafter Hub
         </Link>
       </div>
@@ -109,12 +109,17 @@ const NaveBar = () => {
       </label>
         {user ? (
           <div className="flex">
+            
+              <NavLink to= "/my" className="mr-3">My Assignment</NavLink>
+            
             <button className="mr-10" onClick={logOut}>
               Log Out
             </button>
+            
           </div>
         ) : (
           <div>
+            
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
