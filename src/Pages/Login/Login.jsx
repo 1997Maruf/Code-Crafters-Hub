@@ -24,7 +24,9 @@ const Login = () => {
             const user = {email};
             // naviget(location?.state ? location?.state : '/')
             //get access token
-            axios.post('http://localhost:5000/jwt', user)
+            axios.post('http://localhost:5000/jwt', user, {
+              withCredentials: true
+            })
             .then(res =>{
               console.log(res.data);
             })
