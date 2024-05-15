@@ -1,9 +1,9 @@
 const FeatureSection = () => {
   return (
  <div>
-     <div className="mx-20 md:mx-48 sm:mx-[130px] mt-28 mb-28 " >
+     <div className="mx-20  md:mx-48 sm:mx-[130px] mt-28 mb-28 " >
         <h2 className="text-5xl font-bold text-center mb-24">Feature Section</h2>
-      <div className="grid lg:grid-cols-4   grid-cols-1">
+      <div className="grid lg:grid-cols-4 gap-10  grid-cols-1">
       <div className=" skeleton card w-96 md:mt-28  shadow-xl  bg-red-300">
       <div className=" bg-red-400 -mt-8 ml-2 rounded-full w-20 h-20 absolute"></div>
         <div className="card-body relative pt-20">
@@ -36,8 +36,8 @@ const FeatureSection = () => {
     </div>
     <div className="mx-20 mt-28 md:mx-48 sm:mx-[130px] mb-28" >
         
-      <div className="grid lg:grid-cols-4 md:grid-cols-1 grid-cols-1">
-      <div className=" skeleton card w-96   shadow-xl  bg-lime-300">
+      <div className="grid lg:grid-cols-4 gap-10 md:grid-cols-1 grid-cols-1">
+      <div className=" skeleton card w-96 md:mt-28 sm:mt-28 shadow-xl bg-lime-300">
       <div className=" bg-lime-400 -mt-8 ml-2 rounded-full w-20 h-20 absolute"></div>
         <div className="card-body relative pt-20">
           <h2 className="card-title">Live Coding Sessions</h2>
